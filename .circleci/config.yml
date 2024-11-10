@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install Maven
-          command: sudo apt-get update && sudo apt-get install -y maven
+          command: sudo apt-get install --reinstall ca-certificates-java
       - run:
           name: Run tests
           command: mvn test
