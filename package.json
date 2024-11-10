@@ -1,0 +1,7 @@
+{
+  "name": "test-java-project",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node run-tests.js"
+  }
+}
