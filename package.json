@@ -1,12 +1,7 @@
 {
-  "name": "my-package",
+  "name": "test-java-project",
   "version": "1.0.0",
-  "description": "A description of my package",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "test": "node run-tests.js"
+  }
 }
