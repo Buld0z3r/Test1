@@ -1,10 +1,9 @@
-# .circleci/config.yml
 version: 2.1
 
 executors:
   java-executor:
     docker:
-      - image: circleci/openjdk:11  # Użyj obrazu z odpowiednią wersją Javy, np. OpenJDK 11
+      - image: circleci/openjdk:11  # Użyj odpowiedniego obrazu z Javą
     working_directory: ~/project
 
 jobs:
@@ -14,13 +13,13 @@ jobs:
       - checkout  # Pobranie kodu z repozytorium
       - run:
           name: Download Dependencies
-          command: ./mvnw dependency:resolve  # Pobranie zależności (jeśli używasz Maven Wrapper)
+          command: mvn dependency:resolve  # Pobranie zależności
       - run:
           name: Compile Code
-          command: ./mvnw compile  # Kompilacja kodu
+          command: mvn compile  # Kompilacja kodu
       - run:
           name: Run Tests
-          command: ./mvnw test  # Uruchomienie testów jednostkowych
+          command: mvn test  # Uruchomienie testów jednostkowych
 
 workflows:
   version: 2
