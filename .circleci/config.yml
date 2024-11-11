@@ -17,7 +17,11 @@ jobs:
           name: Run tests
           command: |
             . venv/bin/activate
-            pytest test_calculator.py --junitxml=results.xml
+            PYTHONPATH=. pytest test_calculator.py --junitxml=test-results/results.xml
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
 
 workflows:
   version: 2
